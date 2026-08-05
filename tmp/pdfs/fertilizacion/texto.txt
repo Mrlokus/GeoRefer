@@ -1,0 +1,141 @@
+                       1132000                                     1134000                                           1136000                                              1138000                                                   1140000                                                1142000
+
+
+
+
+                                                                                                                                                                                                                                                                                                               ®
+                                                                                                         MAPA DE FERTILIZACIÓN
+1002000
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                            1002000
+                                                                                                                      C35
+                                                                                                             B34                                                          E34R
+                                                                                                                                                       D34
+                                                                                                                           C34
+                                                                                                         B34                                                                 E33                 F33R
+                                                                                                                                                     D33
+                                                                                                                           C33                                                                     F32R
+                                                                                                       B33                                                                   E32
+                                                                                                                                                     D32
+                                                                                                                            C32
+                                                                                                   B32                                                                                             F31R
+                                                                                                                                                                                 E31
+                                                                                                                                                     D31
+                                                                                                                            C31
+                                                                                                 B31                                                                                                  F30R
+                                                                                                                                                                                 E30
+                                                                                                                                                      D30
+                                                                                                                            C30                                                                              F29R
+                                                                                                  B30A                                                                           E29
+                                                                                  B30B                                                   C29          D29
+                                                                                                                     C29           C29                                                                        F28R
+                                                              CHU3IRCRISTALINA                    B29AR                                                                          E28R
+                                                                                  B29B                                                                        D28
+                                                                                                                                    C28        D28                                                                   F27R          G27R
+                                                                                                                     C28
+                                            CHU2R                                 B28B            B28AR                                                             D27          E27R
+                                                              CHU3DR
+                                                                                                                                                     D27                                                                              G26R
+                                               CHU2R                                                                         C27R                                                                                   F26R
+                                 CHU1R                                                            B27R                                                                            E26R
+               CHU10R                                                                                                                                         D26                                                                           G25R
+                                                 CHUPLR             A27                                                      C26R                    D26
+           CHU10R                                         CHU27R                                                                                                                                               F25R
+                            CHU1R                                                                       B26R                                                                      E25R
+              SANJNT                                                 A26               CHU50R                                                          D25                                                                                     G24R
+                       CHUISLR                    CHU27R                                                                     C25R
+                                                         AP26                                                                                                                                                       F24AR
+                                              CHU1AR                                                         B25                                                                  E24R            F24BR
+999000
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                            999000
+                                                                            A25                                                                                                                                                                                H23R
+                                      CHU1BR            AP25A                                                  B25                                     D24R                                                                                 G23R
+                                             CHU1BR  AP25B                                                                        C24R                                                                               F23AR
+                                 CHU1BR                                                                                                                                            E23R               F23BR
+                                                           AP24             A24            B24                                                                                                                                                                      H22R
+                                              CHU1BR                                                                                  C23AR                D23R                                                                              G22R
+                                                      AP24                                                                                                                                                             F22AR
+                                                                                          B23B                                     C23B                                                                 F22BR
+                                                                                 A23                                                                                               E22R                                                                            H21R
+                                                                    A23                            B23A                                                     D22R                                                                             G21R
+                                                  AP23                                                                                                                                                                      F21AR
+                                                                                                                                                                                                             F21BR
+                                                                  A22B      A22B            B22                                                                    D21R                E21R                                                                        H-20R
+                                          CAPRICHO        AP22                     A22A                                                                                                                                       F20AR          G20R
+                                                                  A22B                                                                                                                                         F20BR
+                                         CAPRICHO AP22                                      B21
+                                                                                                                                                                     D21R
+                                                                                                                                                                                        E20R
+                                                           AP21A A21B              A21A
+                                                                                                                                                                                                                                              G19AR
+                                                                                                                                                                                                                                                                      H19R
+                                                   AP21B                   A21A
+                                          AP21C AP20DAP20B AP20C                            B20                                                                                           E19R
+                                                                                                                                                                                                                    F19R           G19BR
+                                                                                                                                                                                                                                                                            H18R
+                                              AP20D                        A20                                                                                                                                                                     G18AR
+                                                        AP20A                                                                                                                                                       F18R            G18BR
+                                                              A19B                                                                                                                       E18R                                                                              H17R             I17R
+                                                                               A19A                                                                                                                                                                  G17AR
+                                                       AP19      A19B                                                                                                                                               F17R              G17BR
+                                                                                                                                                                                               E17R                                                                                            I16R
+                                                              A18A           A18B A18C                                                                                                                                                                                     H16R
+                                                AP18               A18A                                                                                                                                                                               G16AR
+                                                          AP18          A18A A18B                                                                                                                                                          G16BR
+                                                                                                                                                                                                                            F16R                                                                     I15R
+                                                                           A17                                                                                                                                                                             G15AR           H15R
+                                                                     A17                                                                                                                                                                     G15BR
+                                                                                                                                                                                                                             F15R
+                                                                                                                                                                                                                                                                                                     I14R                   J14R
+                                                                                            MUISCAS                                                                                                                                                                 H14AR
+                                                                             A16                                                                                                                                                               G14R
+                                                                                                                                                                                                                                                                                                                              J13R
+                                                                                                                                                                                                                                                               H13BR                                  I13R
+                                                                                                                                                                                                                                    MP4               G13R                    H13AR
+                                                                                                                                                                                                                                             G13R              H13BR                                                            J12R
+                                                                                                                                                                                                                                                                                                         I12R
+                                                                                                                                                                                                                                                                                    H12AR
+                                                                                                                                                                                                                                           MP3C G12R G12R   H12BR
+                                                                                                                                                                                                                                                MP3B                                                                                 J11R
+                                                                                                                                                                                                                                                                                    H11AR                I11R
+                                                                                                                                                                                                                                                 MP3A
+996000
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                            996000
+                                                                                                                                                                                                                                                       G11R   H11B
+                                                                                                                                                                                                                                                                                   H11AR                 I10R                        J10R
+                                                                                                                                                                                                                                                                          H10                      I10R
+                                                                                                                                                                                                                                                          MP2A   H10
+                                                                                                                                                                                                                                                      MP-2B                 H10                                                J9R
+                                                                                                                                                                                                                                                                                                         I9R
+                                                                                                                                                                                                                                                             MP1C
+                                                                                                                                                                                                                                                                         H9R
+                                                                                                                                                                                                                                                            MP1C MP1B
+                                                                                                                                                                                                                                                                    MP1A      H9R                                 I8R
+                                                                                                                                                                                                                                                                                             I8R
+                                                                                                                                                                                                                                                                                                                      I7R
+                                                                                                                                                                                                                                                                                                         I7R
+                                                                                                                                                                                                                                                                                               I7B
+                                                                                                                                                                                                                                                                                                                I6R     I6R
+                                                                                                                                                                                                                                                                                                   I6B
+
+                                                                                                                                                                                                                                                                                                                        I5R
+
+
+
+
+                                                                          Metros
+          0 390 780                  1.560             2.340           3.120
+
+                       1132000                                     1134000                                           1136000                                              1138000                                                   1140000                                                1142000
+
