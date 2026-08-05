@@ -68,7 +68,18 @@ Se necesitan dos lecturas consecutivas para mejorar de estado. Una degradación 
 7. Prueba a cielo abierto, bajo vegetación y junto a una construcción.
 8. Verifica que la aplicación muestre siempre la precisión real informada por Android.
 
-## 6. Ejecutar las pruebas unitarias
+## 6. Probar mapas descargables
+
+1. Con conexión a Internet, abre **Descargas**.
+2. Selecciona **Departamento** y elige **Meta** o **Casanare**, o selecciona **Rectángulo**.
+3. Para un rectángulo, mueve y amplía el mapa hasta encerrar la zona dentro del marco dorado.
+4. Elige la vista Rural, Cartográfica, Minimalista o Alto contraste.
+5. Pulsa **Descargar** y espera el estado **Disponible sin conexión**.
+6. Pulsa **Usar** en el mapa descargado.
+7. Regresa a **Mapa** y confirma que no aparece una tarjeta para cambiarlo.
+8. Activa modo avión y vuelve a abrir el mapa para comprobar el almacenamiento offline.
+
+## 7. Ejecutar las pruebas unitarias
 
 Desde Android Studio:
 
@@ -78,7 +89,7 @@ Desde Android Studio:
 
 También puedes usar la ventana **Gradle** y ejecutar `app > Tasks > verification > testDebugUnitTest`.
 
-## 7. Generar un APK de prueba
+## 8. Generar un APK de prueba
 
 1. Abre **Build > Build Bundle(s) / APK(s) > Build APK(s)**. Según la versión de Android Studio, el menú puede llamarse **Generate App Bundles or APKs > Generate APKs**.
 2. Espera el mensaje de compilación finalizada.
@@ -90,7 +101,7 @@ La ruta habitual es:
 app\build\outputs\apk\debug\app-debug.apk
 ```
 
-## 8. Generar un APK firmado para distribuir
+## 9. Generar un APK firmado para distribuir
 
 1. Abre **Build > Generate Signed App Bundle or APK**.
 2. Selecciona **APK**.
