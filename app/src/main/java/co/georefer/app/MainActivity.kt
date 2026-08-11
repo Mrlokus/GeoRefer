@@ -25,7 +25,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import co.georefer.app.location.GpsViewModel
 import co.georefer.app.location.LocationPermissionLevel
 import co.georefer.app.map.GeoPdfViewModel
-import co.georefer.app.map.OfflineMapsViewModel
+import co.georefer.app.map.OfflineMapsViewModeldit
 import co.georefer.app.orientation.HeadingViewModel
 import co.georefer.app.points.PointsViewModel
 import co.georefer.app.points.PointFileFormat
