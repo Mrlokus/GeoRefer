@@ -1,0 +1,34 @@
+{
+  "version": 8,
+  "name": "EOxCloudless Satellite 2025",
+  "sources": {
+    "eox-satellite-2025": {
+      "type": "raster",
+      "tiles": [
+        "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2025_3857/default/g/{z}/{y}/{x}.jpg"
+      ],
+      "tileSize": 256,
+      "minzoom": 0,
+      "maxzoom": 14,
+      "attribution": "EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2025)"
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "#15231b"
+      }
+    },
+    {
+      "id": "satellite-2025",
+      "type": "raster",
+      "source": "eox-satellite-2025",
+      "paint": {
+        "raster-fade-duration": 250,
+        "raster-resampling": "linear"
+      }
+    }
+  ]
+}
