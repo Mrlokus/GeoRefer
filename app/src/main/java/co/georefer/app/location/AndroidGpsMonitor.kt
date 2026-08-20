@@ -148,8 +148,10 @@ class AndroidGpsMonitor(context: Context) {
     }.getOrDefault(false)
 
     private fun cleanupCallbacks() {
-        runCatching {
+        try {
             LocationManagerCompat.removeUpdates(locationManager, locationListener)
+        } catch (_: SecurityException) {
+            // El permiso puede revocarse mientras la aplicación está en segundo plano.
         }
         runCatching {
             LocationManagerCompat.unregisterGnssStatusCallback(locationManager, gnssCallback)

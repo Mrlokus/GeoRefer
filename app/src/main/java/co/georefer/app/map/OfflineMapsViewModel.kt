@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
+import android.os.storage.StorageManager
 import androidx.lifecycle.AndroidViewModel
 import org.json.JSONObject
 import org.maplibre.android.geometry.LatLngBounds
@@ -24,7 +25,7 @@ class OfflineMapsViewModel(application: Application) : AndroidViewModel(applicat
     private val _uiState = MutableStateFlow(
         OfflineMapsUiState(
             activeMapKey = preferences.getString(KEY_ACTIVE_MAP, null),
-            availableStorageBytes = application.filesDir.usableSpace,
+            availableStorageBytes = availableStorageBytes(application),
         ),
     )
     val uiState: StateFlow<OfflineMapsUiState> = _uiState.asStateFlow()
@@ -60,7 +61,7 @@ class OfflineMapsViewModel(application: Application) : AndroidViewModel(applicat
                     maps = sortedEntries,
                     activeMapKey = if (removedActiveRegion) null else _uiState.value.activeMapKey,
                     isLoading = false,
-                    availableStorageBytes = getApplication<Application>().filesDir.usableSpace,
+                    availableStorageBytes = availableStorageBytes(),
                     managedMapBytes = sortedEntries.sumOf { it.downloadedBytes },
                 )
                 regionsToObserve.forEach(::observeAndReadStatus)
@@ -105,7 +106,7 @@ class OfflineMapsViewModel(application: Application) : AndroidViewModel(applicat
             return
         }
         val estimatedBytes = estimateDownloadBytes(style, estimatedTiles)
-        val usableSpace = getApplication<Application>().filesDir.usableSpace
+        val usableSpace = availableStorageBytes()
         if (estimatedBytes > (usableSpace - MIN_FREE_STORAGE_BYTES).coerceAtLeast(0L)) {
             _uiState.value = _uiState.value.copy(
                 availableStorageBytes = usableSpace,
@@ -210,7 +211,7 @@ class OfflineMapsViewModel(application: Application) : AndroidViewModel(applicat
                 _uiState.value = _uiState.value.copy(
                     maps = _uiState.value.maps.filterNot { it.regionId == regionId },
                     activeMapKey = if (wasActive) null else _uiState.value.activeMapKey,
-                    availableStorageBytes = getApplication<Application>().filesDir.usableSpace,
+                    availableStorageBytes = availableStorageBytes(),
                     managedMapBytes = _uiState.value.maps.filterNot { it.regionId == regionId }
                         .sumOf { it.downloadedBytes },
                 )
@@ -322,7 +323,7 @@ class OfflineMapsViewModel(application: Application) : AndroidViewModel(applicat
         val sortedMaps = maps.sortedByDescending { it.regionId }
         _uiState.value = _uiState.value.copy(
             maps = sortedMaps,
-            availableStorageBytes = getApplication<Application>().filesDir.usableSpace,
+            availableStorageBytes = availableStorageBytes(),
             managedMapBytes = sortedMaps.sumOf { it.downloadedBytes },
         )
     }
@@ -333,7 +334,7 @@ class OfflineMapsViewModel(application: Application) : AndroidViewModel(applicat
             }
         _uiState.value = _uiState.value.copy(
             maps = maps,
-            availableStorageBytes = getApplication<Application>().filesDir.usableSpace,
+            availableStorageBytes = availableStorageBytes(),
             managedMapBytes = maps.sumOf { it.downloadedBytes },
         )
     }
@@ -376,6 +377,14 @@ class OfflineMapsViewModel(application: Application) : AndroidViewModel(applicat
         val minZoom: Double,
         val maxZoom: Double,
     )
+
+    private fun availableStorageBytes(): Long = availableStorageBytes(getApplication())
+
+    private fun availableStorageBytes(application: Application): Long = runCatching {
+        val storageManager = application.getSystemService(StorageManager::class.java)
+        val storageUuid = storageManager.getUuidForPath(application.filesDir)
+        storageManager.getAllocatableBytes(storageUuid)
+    }.getOrDefault(application.filesDir.freeSpace)
 
     private companion object {
         const val PREFERENCES_NAME = "georefer_app"

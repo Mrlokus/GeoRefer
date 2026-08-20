@@ -1,5 +1,6 @@
 package co.georefer.app.map
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Color
@@ -44,11 +45,12 @@ class GeoPdfRepository(context: Context) {
         } ?: error("Android no pudo abrir el archivo seleccionado.")
     }
 
+    @SuppressLint("Recycle") // Los descriptores se cierran con use; Lint no sigue los retornos anidados.
     private fun renderFirstPage(uri: Uri): Bitmap {
         val descriptor = resolver.openFileDescriptor(uri, "r")
             ?: error("Android no pudo abrir el archivo seleccionado.")
 
-        descriptor.use { fileDescriptor ->
+        return descriptor.use { fileDescriptor ->
             PdfRenderer(fileDescriptor).use { renderer ->
                 if (renderer.pageCount != 1) {
                     error("Por ahora Georefer admite GeoPDF de una sola página.")
@@ -58,7 +60,7 @@ class GeoPdfRepository(context: Context) {
                     val scale = MAX_RENDER_EDGE_PX.toFloat() / longestEdge.toFloat()
                     val width = (page.width * scale).roundToInt().coerceAtLeast(1)
                     val height = (page.height * scale).roundToInt().coerceAtLeast(1)
-                    return Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888).also { bitmap ->
+                    Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888).also { bitmap ->
                         bitmap.eraseColor(Color.WHITE)
                         page.render(
                             bitmap,
@@ -72,11 +74,12 @@ class GeoPdfRepository(context: Context) {
         }
     }
 
+    @SuppressLint("Recycle") // El InputStream se cierra con use junto con PDDocument.
     private fun readReference(uri: Uri): GeoPdfReference {
         val input = resolver.openInputStream(uri)
             ?: error("Android no pudo leer los metadatos del archivo.")
 
-        input.use { stream ->
+        return input.use { stream ->
             PDDocument.load(stream).use { document ->
                 if (document.numberOfPages != 1) {
                     error("Por ahora Georefer admite GeoPDF de una sola página.")
@@ -121,7 +124,7 @@ class GeoPdfRepository(context: Context) {
                     )
                 }
 
-                return GeoPdfReference(
+                GeoPdfReference(
                     pageWidthPoints = page.mediaBox.width.toDouble(),
                     pageHeightPoints = page.mediaBox.height.toDouble(),
                     viewportBox = viewportBox,
@@ -132,7 +135,7 @@ class GeoPdfRepository(context: Context) {
     }
 
     private fun displayName(uri: Uri): String {
-        resolver.query(
+        val displayName = resolver.query(
             uri,
             arrayOf(OpenableColumns.DISPLAY_NAME),
             null,
@@ -140,9 +143,9 @@ class GeoPdfRepository(context: Context) {
             null,
         )?.use { cursor ->
             val index = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
-            if (index >= 0 && cursor.moveToFirst()) return cursor.getString(index)
+            if (index >= 0 && cursor.moveToFirst()) cursor.getString(index) else null
         }
-        return uri.lastPathSegment ?: "Mapa GeoPDF"
+        return displayName ?: uri.lastPathSegment ?: "Mapa GeoPDF"
     }
 
     private fun COSDictionary.dictionary(name: String): COSDictionary? =
@@ -151,6 +154,7 @@ class GeoPdfRepository(context: Context) {
     private fun COSDictionary.dictionaryArray(name: String): COSArray? =
         getDictionaryObject(COSName.getPDFName(name)) as? COSArray
 
+    @Suppress("DEPRECATION") // API heredada de PDFBox Android; se mantiene hasta migrar la librería.
     private fun COSDictionary.numberArray(name: String): List<Double>? =
         (getDictionaryObject(COSName.getPDFName(name)) as? COSArray)?.let { array ->
             (0 until array.size()).mapNotNull { index ->

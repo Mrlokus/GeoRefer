@@ -15,6 +15,7 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -72,6 +73,7 @@ import kotlin.math.sin
 fun MapLibreMapView(
     styleUrl: String,
     initialArea: MapArea,
+    modifier: Modifier = Modifier,
     gpsFix: GpsFix? = null,
     headingDegrees: Float? = null,
     northUpLocked: Boolean = false,
@@ -87,14 +89,13 @@ fun MapLibreMapView(
     onUserGesture: (() -> Unit)? = null,
     showSelectionRectangle: Boolean = false,
     onVisibleAreaChanged: ((MapArea) -> Unit)? = null,
-    modifier: Modifier = Modifier,
 ) {
     val mapView = rememberMapViewWithLifecycle()
     var mapInstance by remember(mapView) { mutableStateOf<MapLibreMap?>(null) }
     var cameraInitialized by remember(mapView, initialArea) { mutableStateOf(false) }
     var loadedStyle by remember(mapView) { mutableStateOf<String?>(null) }
-    var handledLocateRequest by remember(mapView) { mutableStateOf(0) }
-    var handledFocusPointRequest by remember(mapView) { mutableStateOf(0) }
+    var handledLocateRequest by remember(mapView) { mutableIntStateOf(0) }
+    var handledFocusPointRequest by remember(mapView) { mutableIntStateOf(0) }
 
     DisposableEffect(mapInstance, onMapLongPress) {
         val map = mapInstance
