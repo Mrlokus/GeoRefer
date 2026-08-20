@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Georefer" parent="android:style/Theme.Material.NoActionBar">
+    <style name="Theme.GeoLuker" parent="android:style/Theme.Material.NoActionBar">
         <item name="android:fontFamily">sans</item>
         <item name="android:windowLightStatusBar">false</item>
-        <item name="android:statusBarColor">@color/forest_deep</item>
-        <item name="android:navigationBarColor">@color/forest_deep</item>
+        <item name="android:statusBarColor">@color/luker_brown</item>
+        <item name="android:navigationBarColor">@color/luker_brown</item>
         <item name="android:windowActionModeOverlay">true</item>
     </style>
 </resources>

@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "co.georefer.app"
+    namespace = "co.geoluker.app"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "co.georefer.app"
+        applicationId = "co.geoluker.app"
         minSdk = 29
         targetSdk = 35
         versionCode = 1
@@ -46,6 +46,10 @@ android {
     packaging {
         resources.excludes += "/META-INF/{AL2.0,LGPL2.1}"
     }
+
+    androidResources {
+        noCompress += "pdf"
+    }
 }
 
 dependencies {
@@ -64,7 +68,6 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended")
     implementation("com.tom-roush:pdfbox-android:2.0.27.0")
-    implementation("org.maplibre.gl:android-sdk-opengl:13.0.2")
 
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")

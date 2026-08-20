@@ -1,202 +1,163 @@
-<div align="center">
+# GeoLuker
 
-# 🌿 Georefer
+<p align="center">
+  <img src="app/src/main/res/drawable-nodpi/luker_agricola_logo.png" alt="Luker Agrícola" width="360">
+</p>
 
-### Cartografía offline para trabajo rural en Colombia
+<p align="center">
+  <strong>Orientación precisa y consulta del mapa oficial de la plantación, incluso sin internet.</strong>
+</p>
 
-Localiza tu posición, prepara mapas antes de salir a campo y registra puntos sin depender de cobertura móvil.
+<p align="center">
+  <img alt="Android 10+" src="https://img.shields.io/badge/Android-10%2B-3DDC84?logo=android&logoColor=white">
+  <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-Jetpack%20Compose-7F52FF?logo=kotlin&logoColor=white">
+  <img alt="Offline" src="https://img.shields.io/badge/funcionamiento-100%25%20offline-6B2323">
+  <img alt="Proyecto privado" src="https://img.shields.io/badge/distribución-APK%20privada-5A351E">
+</p>
 
-[![Android](https://img.shields.io/badge/Android-10%2B-174F3D?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
-[![Kotlin](https://img.shields.io/badge/Kotlin-2.2-49695B?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
-[![Jetpack Compose](https://img.shields.io/badge/Jetpack_Compose-Material_3-D79B32?style=for-the-badge&logo=jetpackcompose&logoColor=white)](https://developer.android.com/compose)
-[![MapLibre](https://img.shields.io/badge/MapLibre-Offline-2D75D5?style=for-the-badge)](https://maplibre.org/)
+GeoLuker es una aplicación Android privada creada para que el personal de Luker Agrícola pueda ubicarse, consultar lotes y registrar puntos directamente sobre el mapa oficial de la plantación. No utiliza cuentas, servidores ni servicios cartográficos externos.
 
-<sub>Offline first · Sin cuentas · Datos guardados localmente · Diseñada para técnicos de campo y agricultores</sub>
+## Qué ofrece
 
-</div>
+- Mapa oficial GeoPDF incluido dentro de la aplicación: no se descarga ni se importa.
+- Posición GNSS en tiempo real con círculo de precisión y conteo de satélites.
+- Brújula real en dispositivos compatibles y rumbo de desplazamiento GPS en equipos sin magnetómetro.
+- Gestos de zoom, desplazamiento y rotación con límites de cámara y centrados animados.
+- Renderizado progresivo por mosaicos de hasta 16 384 px, solapamiento para evitar textos cortados y caché de memoria limitada.
+- Seguimiento GPS continuo con modo norte arriba, brújula o rumbo de desplazamiento.
+- Centrado automático al obtener una posición válida dentro de la plantación.
+- Aviso claro cuando la ubicación está fuera de Luker Agrícola.
+- Búsqueda local de 177 lotes por código, sin conexión.
+- Creación de puntos mediante pulsación prolongada sobre el mapa.
+- Búsqueda, orden por cercanía/nombre/fecha, edición, eliminación y localización de puntos.
+- Etiquetas visibles sobre el mapa y protección frente a puntos duplicados accidentales.
+- Interfaz Material 3 adaptada a los colores oficiales de Luker Agrícola.
 
----
+## Orientación adaptable al teléfono
 
-## ¿Qué es Georefer?
+GeoLuker valida las lecturas del sensor antes de mostrar una dirección. Así evita que ciertos teléfonos presenten una flecha inmóvil aunque Android anuncie una brújula virtual defectuosa.
 
-Georefer es una aplicación Android de orientación cartográfica para entornos rurales. Permite descargar previamente una zona de Colombia, trabajar sin Internet, visualizar la posición GNSS del teléfono y guardar puntos de interés directamente sobre el mapa.
-
-La interfaz utiliza la identidad visual **Bosque Andino**: limpia, profesional y pensada para conservar legibilidad bajo luz solar o durante jornadas prolongadas.
-
-> [!IMPORTANT]
-> El repositorio contiene el código fuente. El APK debe generarse desde Android Studio y distribuirse de forma privada por el responsable del proyecto.
-
-## Funciones principales
-
-| Área | Capacidades |
+| Capacidad del dispositivo | Comportamiento |
 |---|---|
-| 🗺️ **Mapas offline** | Descarga por cualquiera de los 32 departamentos, Bogotá D. C. o un rectángulo seleccionado manualmente. |
-| 🛰️ **Vistas cartográficas** | Rural, Cartográfica, Minimalista, Alto contraste y Satélite 2025. |
-| 📍 **Posicionamiento GNSS** | Coordenadas WGS 84, precisión real, círculo de incertidumbre y satélites usados/visibles. |
-| 🧭 **Orientación** | Rotación e inclinación del mapa, norte arriba y orientación según el rumbo del teléfono. |
-| 📌 **Puntos de campo** | Crear mediante pulsación prolongada, editar, eliminar, centrar en el mapa y calcular distancia y rumbo. |
-| 🔄 **Intercambio de datos** | Importación y exportación de puntos en GeoJSON, KML, GPX y CSV. |
-| 📄 **GeoPDF** | Importación desde el almacenamiento interno, lectura de georreferenciación y visualización offline. |
-| 💾 **Almacenamiento** | Estimación previa de tamaño, protección del espacio libre, pausa, reanudación e integridad de descargas. |
-| 🔒 **Privacidad** | Sin inicio de sesión, sin nube propia y sin respaldo de los datos internos de la aplicación. |
+| Magnetómetro o vector de rotación válido | La flecha azul indica hacia dónde apunta el teléfono y aplica corrección de declinación magnética. |
+| Sin brújula física | La interfaz muestra **Rumbo al caminar** mientras el usuario está quieto. |
+| Movimiento GPS desde 0,8 m/s | La flecha dorada indica la dirección real del desplazamiento y la interfaz muestra **Rumbo GPS**. |
+| Pérdida del rumbo durante el seguimiento | El mapa regresa suavemente a norte arriba en lugar de conservar una orientación antigua. |
 
-## Experiencia de campo
+La dirección calculada por GPS representa hacia dónde se mueve la persona; no puede indicar hacia dónde apunta un teléfono inmóvil que carece de magnetómetro.
 
-```text
-Con Internet                    Sin cobertura
-────────────                    ─────────────
-Elegir zona                     Abrir mapa guardado
-Seleccionar vista       ───▶    Ubicarse con GNSS
-Descargar recursos              Rotar y ampliar
-                                Registrar puntos
-                                Consultar distancia y rumbo
+## Privacidad y funcionamiento offline
+
+GeoLuker no requiere cuenta, backend ni conexión de red. El manifiesto no solicita permisos de internet. El mapa, el catálogo de lotes y los recursos visuales vienen dentro del APK; la ubicación y los puntos permanecen únicamente en el almacenamiento interno de la aplicación.
+
+La única autorización solicitada durante el uso es la ubicación precisa de Android. El GPS funciona sin datos móviles, aunque una conexión temporal puede acelerar la primera adquisición de satélites después de estrenar o reiniciar el teléfono. Al desinstalar la aplicación también se eliminan los puntos guardados localmente.
+
+## Tecnología
+
+- Kotlin y Jetpack Compose
+- Material 3
+- `PdfRenderer` para visualizar el mapa oficial a alta resolución
+- PDFBox para leer la georreferenciación interna del GeoPDF
+- APIs GNSS y sensores de orientación de Android
+- Preferencias privadas de Android para persistir puntos
+
+```mermaid
+flowchart LR
+    GNSS[GPS y satélites] --> GPS[Monitor GNSS]
+    SENSOR[Brújula o rumbo de marcha] --> HEADING[Monitor de orientación]
+    PDF[GeoPDF oficial] --> MAP[Renderizador por mosaicos]
+    LOTS[Catálogo local de lotes] --> MAP
+    GPS --> UI[Interfaz Compose]
+    HEADING --> UI
+    MAP --> UI
+    UI <--> POINTS[Puntos en almacenamiento interno]
 ```
 
-El posicionamiento GNSS continúa funcionando sin datos móviles. Internet solo es necesario para descargar inicialmente los mapas o consultar recursos cartográficos que todavía no estén almacenados.
+## Datos técnicos
 
-## Tipos de mapa
+| Propiedad | Valor |
+|---|---|
+| Identificador | `co.geoluker.app` |
+| Versión actual | `0.1.0` (`versionCode 1`) |
+| Android mínimo | Android 10 — API 29 |
+| SDK de compilación y destino | API 35 |
+| Java/Kotlin JVM | 17 |
+| Mapa incluido | `app/src/main/res/raw/luker_map.pdf` |
+| Catálogo local | 177 lotes indexados |
+| Permisos | Ubicación aproximada y precisa |
+| Acceso a internet | No solicitado |
 
-- **Rural:** vías, caminos, predios y referencias útiles para trabajo de campo.
-- **Cartográfico:** poblaciones, vías y límites con lectura equilibrada.
-- **Minimalista:** reduce elementos visuales para destacar ubicación y puntos.
-- **Alto contraste:** vista oscura para condiciones de poca luz.
-- **Satélite 2025:** mosaico Sentinel-2 sin nubes, destinado exclusivamente a uso no comercial.
-- **GeoPDF local:** mapas georreferenciados aportados por el usuario desde el teléfono.
+## Requisitos de desarrollo
 
-Las descargas se almacenan dentro de la aplicación. Antes de comenzar, Georefer calcula un tamaño aproximado, comprueba el espacio disponible y conserva una reserva mínima para no saturar el dispositivo.
+- Android Studio con el JDK integrado o JDK 17 compatible.
+- Android SDK 35 instalado.
+- Dispositivo con Android 10 o posterior.
+- GPS recomendado para la operación en campo; el magnetómetro es opcional.
 
-## Puntos y formatos compatibles
+## Abrir y verificar en Android Studio
 
-Mantén presionada una ubicación para crear un marcador. Cada punto puede incluir nombre y nota, y permanece únicamente en el teléfono hasta que decidas exportarlo.
+1. Abre esta carpeta como proyecto, no solamente la carpeta `app`.
+2. Espera a que termine **Gradle Sync**.
+3. Conecta el teléfono con depuración USB o crea un emulador con Android 10+.
+4. Ejecuta la configuración `app`.
+5. Concede ubicación precisa cuando GeoLuker la solicite.
+6. Realiza la primera prueba GPS al aire libre y con la pantalla encendida.
+7. Prueba nuevamente con modo avión para comprobar el funcionamiento offline.
 
-| Formato | Importar | Exportar | Uso recomendado |
-|---|:---:|:---:|---|
-| GeoJSON | ✅ | ✅ | Sistemas de información geográfica y aplicaciones web. |
-| KML | ✅ | ✅ | Google Earth y herramientas cartográficas. |
-| GPX | ✅ | ✅ | Navegadores y dispositivos GPS. |
-| CSV | ✅ | ✅ | Hojas de cálculo y procesamiento tabular. |
-
-Al importar, la aplicación valida coordenadas y evita agregar nuevamente puntos con la misma ubicación.
-
-## Requisitos
-
-- Android Studio con JDK integrado.
-- Android SDK 35.
-- Java/Kotlin configurado con destino JVM 17.
-- Dispositivo con Android 10 o posterior (`minSdk 29`).
-- Receptor GPS/GNSS para posicionamiento en campo.
-- Internet únicamente para la primera sincronización de Gradle y la descarga de mapas.
-
-## Inicio rápido
-
-1. Clona el repositorio:
-
-   ```bash
-   git clone https://github.com/Mrlokus/GeoRefer.git
-   cd GeoRefer
-   ```
-
-2. Abre en Android Studio la **carpeta raíz `GeoRefer`**, no la carpeta `app`.
-3. Espera a que termine **Gradle Sync**.
-4. Verifica que el SDK 35 esté instalado.
-5. Conecta un dispositivo Android con depuración USB.
-6. Selecciona la configuración `app` y pulsa **Run**.
-
-La guía detallada de configuración, ejecución y firma está en [docs/android-studio-pasos.md](docs/android-studio-pasos.md).
-
-## Verificación del proyecto
-
-En Windows PowerShell:
+Desde una terminal PowerShell ubicada en la raíz también puedes verificar el código:
 
 ```powershell
-$env:JAVA_HOME = 'C:\Program Files\Android\Android Studio\jbr'
-.\gradlew.bat :app:compileDebugKotlin
-.\gradlew.bat :app:testDebugUnitTest
-.\gradlew.bat :app:lintDebug
+.\gradlew.bat compileDebugKotlin
+.\gradlew.bat testDebugUnitTest
+.\gradlew.bat lintDebug
 ```
 
-En macOS o Linux:
+Estos comandos no generan el APK. La verificación actual completa **23 pruebas unitarias** y Android Lint sin errores. Consulta [la guía de Android Studio](docs/android-studio-pasos.md) para crear y firmar una nueva versión.
 
-```bash
-./gradlew :app:compileDebugKotlin
-./gradlew :app:testDebugUnitTest
-./gradlew :app:lintDebug
+## Actualizar el mapa oficial
+
+Las actualizaciones se distribuyen mediante una nueva versión del APK:
+
+1. Sustituye `app/src/main/res/raw/luker_map.pdf` por el nuevo GeoPDF oficial de una sola página.
+2. Conserva la georreferenciación interna del documento.
+3. Regenera el catálogo de búsqueda:
+
+```powershell
+python tools/generate_lot_catalog.py app/src/main/res/raw/luker_map.pdf app/src/main/assets/lots.json
 ```
 
-Estado verificado del proyecto:
+4. Revisa el número de lotes informado por el script.
+5. Ejecuta las pruebas y compila la nueva versión firmada del APK.
 
-- Compilación Kotlin y recursos: ✅
-- Pruebas unitarias: **25 aprobadas**
-- Android Lint: **0 errores**
-- Generación automática de APK: no incluida
+El generador reconoce las familias de códigos presentes en el mapa actual. Si el esquema de nombres cambia, actualiza primero sus rangos en `tools/generate_lot_catalog.py`.
 
-## Arquitectura
+## Estructura principal
 
 ```text
-app/src/main/java/co/georefer/app/
-├── location/       Lecturas GPS, GNSS, precisión y satélites
-├── map/            GeoPDF, regiones offline y estilos cartográficos
-├── orientation/    Rumbo magnético, norte verdadero y sensores
-├── points/         Persistencia e intercambio de puntos
-├── settings/       Preferencias locales del mapa
-└── ui/             Pantallas y componentes Jetpack Compose
+app/src/main/
+├── assets/lots.json                 # Índice local de búsqueda
+├── java/co/geoluker/app/
+│   ├── location/                    # GNSS, satélites y calidad
+│   ├── map/                         # GeoPDF y catálogo de lotes
+│   ├── orientation/                 # Brújula, validación y rumbo GPS
+│   ├── points/                      # Puntos locales
+│   └── ui/                          # Pantallas y tema visual
+└── res/
+    ├── drawable-nodpi/              # Logo oficial
+    └── raw/luker_map.pdf            # Mapa oficial integrado
 ```
-
-### Tecnologías
-
-- **Kotlin** y **Coroutines/StateFlow** para estado reactivo.
-- **Jetpack Compose + Material 3** para la interfaz.
-- **MapLibre Native** para navegación y regiones cartográficas offline.
-- **PDFBox Android + PdfRenderer** para lectura y renderizado de GeoPDF.
-- **SharedPreferences** para preferencias y puntos locales.
-- **JUnit 4** para pruebas unitarias.
-
-## Principios del proyecto
-
-- **Offline first:** las funciones esenciales deben operar sin cobertura.
-- **Datos bajo control del usuario:** puntos y mapas permanecen en el dispositivo.
-- **Precisión honesta:** la aplicación muestra la incertidumbre reportada por Android; no inventa una exactitud mayor.
-- **Interoperabilidad:** los datos de campo pueden salir en formatos abiertos.
-- **Simplicidad:** no hay cuentas, perfiles ni pasos innecesarios antes de abrir el mapa.
-
-## Limitaciones actuales
-
-- Los departamentos se descargan usando su rectángulo envolvente, no el polígono administrativo exacto.
-- La selección por municipio todavía no está implementada.
-- Los GeoPDF están limitados a una página, un máximo de 250 MB y referencias compatibles con `BBox`, `LPTS` y `GPTS`.
-- La cantidad máxima preventiva es de 6.000 teselas por región.
-- La precisión final depende del receptor, el cielo visible, la vegetación y las condiciones del terreno.
-
-## Fuentes cartográficas y atribuciones
-
-- Las vistas vectoriales utilizan estilos de **OpenFreeMap** y datos de **OpenStreetMap/OpenMapTiles**, sujetos a sus respectivas atribuciones y condiciones de uso.
-- La vista **Satélite 2025** utiliza **EOxCloudless**, por EOX IT Services GmbH, e incluye datos Copernicus Sentinel modificados de 2025. Su uso dentro de este proyecto se plantea como **no comercial** y requiere conservar la atribución correspondiente.
-- Las envolventes departamentales se basan en el Marco Geoestadístico Nacional integrado 2018 del **DANE**.
-
-Antes de distribuir la aplicación, revisa las condiciones vigentes de cada proveedor de mapas y conserva las atribuciones visibles incluidas en la interfaz.
-
-## Hoja de ruta
-
-- [ ] Selección por municipio.
-- [ ] Recorte exacto por polígonos administrativos.
-- [ ] Curvas de nivel y capas rurales adicionales con licencia offline compatible.
-- [ ] Compatibilidad ampliada con GeoPDF multipágina.
-- [ ] Paquetes cartográficos propios para distribución a mayor escala.
-- [ ] Pruebas instrumentadas de interfaz y flujo completo en dispositivo.
 
 ## Documentación
 
-- [Guía paso a paso para Android Studio](docs/android-studio-pasos.md)
-- [Especificación y requerimientos del producto](docs/especificacion-requisitos-georefer.md)
+- [Guía para abrir, ejecutar y firmar el proyecto](docs/android-studio-pasos.md)
+- [Especificación funcional y requerimientos](docs/especificacion-requisitos-geoluker.md)
 
-## Licencia
+## Alcance de precisión
 
-Este repositorio no incluye actualmente un archivo de licencia de software. Hasta que se agregue uno, no se conceden automáticamente permisos de redistribución o modificación pública. Las fuentes cartográficas y los datos de terceros conservan sus propias licencias y condiciones.
+El punto azul representa la lectura y el círculo de precisión entregados por Android. GeoLuker mejora su representación y descarta estados engañosos, pero no puede superar físicamente la precisión del receptor del teléfono. La cantidad de satélites, el follaje, los edificios, el clima y el modelo del dispositivo pueden afectar el resultado.
 
----
+La aplicación está pensada para orientación operativa dentro de la plantación. No reemplaza un levantamiento topográfico ni debe utilizarse para decisiones legales de linderos.
 
-<div align="center">
+## Distribución
 
-**Georefer** · Orientación clara cuando la señal deja de acompañarte.
-
-</div>
+Proyecto privado. El propietario genera, firma y distribuye cada APK directamente. Antes de instalar GeoLuker junto a la aplicación anterior, ten presente que `co.geoluker.app` es un identificador nuevo: Android las considera aplicaciones diferentes y no migra automáticamente los datos guardados por la versión antigua.

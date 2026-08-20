@@ -1,0 +1,894 @@
+{
+  "source": "MAPA_COMPLETO luker.pdf",
+  "sourceSha256": "923a0fcf1865c9670786a2d59672661297ec21f05b83605a032e48b5c8fda940",
+  "pageWidth": 792,
+  "pageHeight": 612,
+  "lotCount": 177,
+  "lots": [
+    {
+      "code": "A16",
+      "xFraction": 0.275023,
+      "yFraction": 0.606408
+    },
+    {
+      "code": "A17",
+      "xFraction": 0.259417,
+      "yFraction": 0.582879
+    },
+    {
+      "code": "A18A",
+      "xFraction": 0.237328,
+      "yFraction": 0.55641
+    },
+    {
+      "code": "A18AA",
+      "xFraction": 0.267632,
+      "yFraction": 0.565821
+    },
+    {
+      "code": "A18C",
+      "xFraction": 0.296965,
+      "yFraction": 0.555233
+    },
+    {
+      "code": "A19A",
+      "xFraction": 0.289602,
+      "yFraction": 0.533469
+    },
+    {
+      "code": "A19B",
+      "xFraction": 0.239753,
+      "yFraction": 0.535626
+    },
+    {
+      "code": "A20",
+      "xFraction": 0.266538,
+      "yFraction": 0.512685
+    },
+    {
+      "code": "A21A",
+      "xFraction": 0.28142,
+      "yFraction": 0.493274
+    },
+    {
+      "code": "A22A",
+      "xFraction": 0.291723,
+      "yFraction": 0.469549
+    },
+    {
+      "code": "A22B",
+      "xFraction": 0.259753,
+      "yFraction": 0.462294
+    },
+    {
+      "code": "A23",
+      "xFraction": 0.261689,
+      "yFraction": 0.443471
+    },
+    {
+      "code": "A24",
+      "xFraction": 0.273811,
+      "yFraction": 0.420139
+    },
+    {
+      "code": "A25",
+      "xFraction": 0.272599,
+      "yFraction": 0.397002
+    },
+    {
+      "code": "AP18",
+      "xFraction": 0.214416,
+      "yFraction": 0.561311
+    },
+    {
+      "code": "AP19",
+      "xFraction": 0.203203,
+      "yFraction": 0.543665
+    },
+    {
+      "code": "AP20A",
+      "xFraction": 0.195888,
+      "yFraction": 0.531123
+    },
+    {
+      "code": "AP20C",
+      "xFraction": 0.226586,
+      "yFraction": 0.500529
+    },
+    {
+      "code": "AP20D",
+      "xFraction": 0.186236,
+      "yFraction": 0.522689
+    },
+    {
+      "code": "AP21C",
+      "xFraction": 0.161433,
+      "yFraction": 0.503274
+    },
+    {
+      "code": "AP22",
+      "xFraction": 0.21381,
+      "yFraction": 0.470333
+    },
+    {
+      "code": "AP23",
+      "xFraction": 0.190173,
+      "yFraction": 0.449158
+    },
+    {
+      "code": "AP24",
+      "xFraction": 0.216992,
+      "yFraction": 0.421707
+    },
+    {
+      "code": "AP25B",
+      "xFraction": 0.207176,
+      "yFraction": 0.411119
+    },
+    {
+      "code": "B20",
+      "xFraction": 0.313812,
+      "yFraction": 0.507195
+    },
+    {
+      "code": "B21",
+      "xFraction": 0.315327,
+      "yFraction": 0.483666
+    },
+    {
+      "code": "B22",
+      "xFraction": 0.314418,
+      "yFraction": 0.462883
+    },
+    {
+      "code": "B23A",
+      "xFraction": 0.332936,
+      "yFraction": 0.44602
+    },
+    {
+      "code": "B23B",
+      "xFraction": 0.308996,
+      "yFraction": 0.434256
+    },
+    {
+      "code": "B24",
+      "xFraction": 0.308963,
+      "yFraction": 0.417394
+    },
+    {
+      "code": "B26",
+      "xFraction": 0.340933,
+      "yFraction": 0.367199
+    },
+    {
+      "code": "B27R",
+      "xFraction": 0.330527,
+      "yFraction": 0.345239
+    },
+    {
+      "code": "B28AR",
+      "xFraction": 0.331436,
+      "yFraction": 0.322102
+    },
+    {
+      "code": "B28B",
+      "xFraction": 0.286875,
+      "yFraction": 0.325631
+    },
+    {
+      "code": "B29AR",
+      "xFraction": 0.329921,
+      "yFraction": 0.29975
+    },
+    {
+      "code": "B29B",
+      "xFraction": 0.287481,
+      "yFraction": 0.305632
+    },
+    {
+      "code": "B30A",
+      "xFraction": 0.328391,
+      "yFraction": 0.276221
+    },
+    {
+      "code": "B30B",
+      "xFraction": 0.287178,
+      "yFraction": 0.280927
+    },
+    {
+      "code": "B31",
+      "xFraction": 0.324418,
+      "yFraction": 0.252692
+    },
+    {
+      "code": "B32",
+      "xFraction": 0.331388,
+      "yFraction": 0.228771
+    },
+    {
+      "code": "B33",
+      "xFraction": 0.336842,
+      "yFraction": 0.205242
+    },
+    {
+      "code": "B34",
+      "xFraction": 0.346085,
+      "yFraction": 0.172694
+    },
+    {
+      "code": "C23AR",
+      "xFraction": 0.427498,
+      "yFraction": 0.425629
+    },
+    {
+      "code": "C23B",
+      "xFraction": 0.412331,
+      "yFraction": 0.434648
+    },
+    {
+      "code": "C24R",
+      "xFraction": 0.408407,
+      "yFraction": 0.407198
+    },
+    {
+      "code": "C27R",
+      "xFraction": 0.401134,
+      "yFraction": 0.337788
+    },
+    {
+      "code": "C28",
+      "xFraction": 0.395631,
+      "yFraction": 0.315436
+    },
+    {
+      "code": "C29",
+      "xFraction": 0.406237,
+      "yFraction": 0.291253
+    },
+    {
+      "code": "C30",
+      "xFraction": 0.396843,
+      "yFraction": 0.269554
+    },
+    {
+      "code": "C31",
+      "xFraction": 0.395631,
+      "yFraction": 0.245241
+    },
+    {
+      "code": "C32",
+      "xFraction": 0.394116,
+      "yFraction": 0.222105
+    },
+    {
+      "code": "C33",
+      "xFraction": 0.392601,
+      "yFraction": 0.198968
+    },
+    {
+      "code": "C34",
+      "xFraction": 0.39048,
+      "yFraction": 0.175439
+    },
+    {
+      "code": "C35",
+      "xFraction": 0.37654,
+      "yFraction": 0.154263
+    },
+    {
+      "code": "CHU1BR",
+      "xFraction": 0.159766,
+      "yFraction": 0.411609
+    },
+    {
+      "code": "CHU1R",
+      "xFraction": 0.12916,
+      "yFraction": 0.345631
+    },
+    {
+      "code": "CHU2R",
+      "xFraction": 0.177494,
+      "yFraction": 0.330337
+    },
+    {
+      "code": "CHU3DR",
+      "xFraction": 0.232343,
+      "yFraction": 0.326808
+    },
+    {
+      "code": "CHU50R",
+      "xFraction": 0.298405,
+      "yFraction": 0.373865
+    },
+    {
+      "code": "D21R",
+      "xFraction": 0.505985,
+      "yFraction": 0.472098
+    },
+    {
+      "code": "D22R",
+      "xFraction": 0.484469,
+      "yFraction": 0.444844
+    },
+    {
+      "code": "D23R",
+      "xFraction": 0.477802,
+      "yFraction": 0.422492
+    },
+    {
+      "code": "D26",
+      "xFraction": 0.477754,
+      "yFraction": 0.356807
+    },
+    {
+      "code": "D27",
+      "xFraction": 0.483966,
+      "yFraction": 0.327396
+    },
+    {
+      "code": "D28",
+      "xFraction": 0.470178,
+      "yFraction": 0.308377
+    },
+    {
+      "code": "D29",
+      "xFraction": 0.469572,
+      "yFraction": 0.284848
+    },
+    {
+      "code": "D30",
+      "xFraction": 0.46836,
+      "yFraction": 0.262104
+    },
+    {
+      "code": "D31",
+      "xFraction": 0.466845,
+      "yFraction": 0.238183
+    },
+    {
+      "code": "D32",
+      "xFraction": 0.465329,
+      "yFraction": 0.215046
+    },
+    {
+      "code": "D33",
+      "xFraction": 0.464117,
+      "yFraction": 0.191909
+    },
+    {
+      "code": "D34",
+      "xFraction": 0.466996,
+      "yFraction": 0.166812
+    },
+    {
+      "code": "E17R",
+      "xFraction": 0.576289,
+      "yFraction": 0.550331
+    },
+    {
+      "code": "E18R",
+      "xFraction": 0.560834,
+      "yFraction": 0.528763
+    },
+    {
+      "code": "E19R",
+      "xFraction": 0.563864,
+      "yFraction": 0.505627
+    },
+    {
+      "code": "E20R",
+      "xFraction": 0.556289,
+      "yFraction": 0.483666
+    },
+    {
+      "code": "E21R",
+      "xFraction": 0.551743,
+      "yFraction": 0.460922
+    },
+    {
+      "code": "E22R",
+      "xFraction": 0.550228,
+      "yFraction": 0.438177
+    },
+    {
+      "code": "E23R",
+      "xFraction": 0.549016,
+      "yFraction": 0.415433
+    },
+    {
+      "code": "E26R",
+      "xFraction": 0.545076,
+      "yFraction": 0.346807
+    },
+    {
+      "code": "E27R",
+      "xFraction": 0.537803,
+      "yFraction": 0.323671
+    },
+    {
+      "code": "E28R",
+      "xFraction": 0.542349,
+      "yFraction": 0.300926
+    },
+    {
+      "code": "E29",
+      "xFraction": 0.540785,
+      "yFraction": 0.275437
+    },
+    {
+      "code": "E30",
+      "xFraction": 0.539573,
+      "yFraction": 0.255045
+    },
+    {
+      "code": "E31",
+      "xFraction": 0.538058,
+      "yFraction": 0.231124
+    },
+    {
+      "code": "E32",
+      "xFraction": 0.536543,
+      "yFraction": 0.207987
+    },
+    {
+      "code": "E33",
+      "xFraction": 0.535331,
+      "yFraction": 0.184851
+    },
+    {
+      "code": "E34R",
+      "xFraction": 0.524167,
+      "yFraction": 0.161322
+    },
+    {
+      "code": "F15R",
+      "xFraction": 0.649927,
+      "yFraction": 0.589154
+    },
+    {
+      "code": "F16R",
+      "xFraction": 0.644472,
+      "yFraction": 0.56837
+    },
+    {
+      "code": "F17R",
+      "xFraction": 0.628108,
+      "yFraction": 0.545626
+    },
+    {
+      "code": "F18R",
+      "xFraction": 0.626896,
+      "yFraction": 0.522881
+    },
+    {
+      "code": "F19R",
+      "xFraction": 0.625684,
+      "yFraction": 0.500137
+    },
+    {
+      "code": "F20",
+      "xFraction": 0.66912,
+      "yFraction": 0.488764
+    },
+    {
+      "code": "F20AR",
+      "xFraction": 0.654624,
+      "yFraction": 0.469941
+    },
+    {
+      "code": "F20BR",
+      "xFraction": 0.619774,
+      "yFraction": 0.477784
+    },
+    {
+      "code": "F21AR",
+      "xFraction": 0.647351,
+      "yFraction": 0.450726
+    },
+    {
+      "code": "F21BR",
+      "xFraction": 0.61432,
+      "yFraction": 0.45504
+    },
+    {
+      "code": "F22AR",
+      "xFraction": 0.640987,
+      "yFraction": 0.429158
+    },
+    {
+      "code": "F22BR",
+      "xFraction": 0.603411,
+      "yFraction": 0.432687
+    },
+    {
+      "code": "F23AR",
+      "xFraction": 0.632805,
+      "yFraction": 0.40759
+    },
+    {
+      "code": "F23BR",
+      "xFraction": 0.595532,
+      "yFraction": 0.411904
+    },
+    {
+      "code": "F24B",
+      "xFraction": 0.587638,
+      "yFraction": 0.39112
+    },
+    {
+      "code": "F26R",
+      "xFraction": 0.627502,
+      "yFraction": 0.339356
+    },
+    {
+      "code": "F27R",
+      "xFraction": 0.631138,
+      "yFraction": 0.312298
+    },
+    {
+      "code": "F28R",
+      "xFraction": 0.615381,
+      "yFraction": 0.293083
+    },
+    {
+      "code": "F29R",
+      "xFraction": 0.609017,
+      "yFraction": 0.271123
+    },
+    {
+      "code": "F30R",
+      "xFraction": 0.593562,
+      "yFraction": 0.249555
+    },
+    {
+      "code": "F31R",
+      "xFraction": 0.590835,
+      "yFraction": 0.226026
+    },
+    {
+      "code": "F32R",
+      "xFraction": 0.590835,
+      "yFraction": 0.202497
+    },
+    {
+      "code": "F33R",
+      "xFraction": 0.582956,
+      "yFraction": 0.18289
+    },
+    {
+      "code": "G11R",
+      "xFraction": 0.734322,
+      "yFraction": 0.672681
+    },
+    {
+      "code": "G12R",
+      "xFraction": 0.709928,
+      "yFraction": 0.649937
+    },
+    {
+      "code": "G13R",
+      "xFraction": 0.707655,
+      "yFraction": 0.630329
+    },
+    {
+      "code": "G14R",
+      "xFraction": 0.704473,
+      "yFraction": 0.607977
+    },
+    {
+      "code": "G15AVR",
+      "xFraction": 0.733762,
+      "yFraction": 0.589628
+    },
+    {
+      "code": "G15BR",
+      "xFraction": 0.694776,
+      "yFraction": 0.586017
+    },
+    {
+      "code": "G16AR",
+      "xFraction": 0.72417,
+      "yFraction": 0.558959
+    },
+    {
+      "code": "G16BR",
+      "xFraction": 0.686594,
+      "yFraction": 0.563272
+    },
+    {
+      "code": "G17AR",
+      "xFraction": 0.716291,
+      "yFraction": 0.53739
+    },
+    {
+      "code": "G17BR",
+      "xFraction": 0.678715,
+      "yFraction": 0.541704
+    },
+    {
+      "code": "G18AR",
+      "xFraction": 0.708109,
+      "yFraction": 0.515038
+    },
+    {
+      "code": "G18BR",
+      "xFraction": 0.672351,
+      "yFraction": 0.520136
+    },
+    {
+      "code": "G19AR",
+      "xFraction": 0.689927,
+      "yFraction": 0.49896
+    },
+    {
+      "code": "G19BR",
+      "xFraction": 0.665684,
+      "yFraction": 0.502097
+    },
+    {
+      "code": "G20R",
+      "xFraction": 0.695382,
+      "yFraction": 0.469941
+    },
+    {
+      "code": "G21R",
+      "xFraction": 0.693867,
+      "yFraction": 0.447197
+    },
+    {
+      "code": "G22R",
+      "xFraction": 0.692655,
+      "yFraction": 0.42406
+    },
+    {
+      "code": "G26R",
+      "xFraction": 0.675685,
+      "yFraction": 0.333474
+    },
+    {
+      "code": "G27R",
+      "xFraction": 0.66326,
+      "yFraction": 0.313083
+    },
+    {
+      "code": "H9R",
+      "xFraction": 0.800384,
+      "yFraction": 0.722876
+    },
+    {
+      "code": "H10",
+      "xFraction": 0.786648,
+      "yFraction": 0.698171
+    },
+    {
+      "code": "H11AR",
+      "xFraction": 0.797202,
+      "yFraction": 0.67072
+    },
+    {
+      "code": "H11B",
+      "xFraction": 0.761732,
+      "yFraction": 0.672681
+    },
+    {
+      "code": "H12AR",
+      "xFraction": 0.797808,
+      "yFraction": 0.644447
+    },
+    {
+      "code": "H12BR",
+      "xFraction": 0.757504,
+      "yFraction": 0.650329
+    },
+    {
+      "code": "H13AR",
+      "xFraction": 0.787505,
+      "yFraction": 0.623271
+    },
+    {
+      "code": "H13BR",
+      "xFraction": 0.748868,
+      "yFraction": 0.628565
+    },
+    {
+      "code": "H14AR",
+      "xFraction": 0.759019,
+      "yFraction": 0.600526
+    },
+    {
+      "code": "H15R",
+      "xFraction": 0.773262,
+      "yFraction": 0.578174
+    },
+    {
+      "code": "H16R",
+      "xFraction": 0.771747,
+      "yFraction": 0.555037
+    },
+    {
+      "code": "H17R",
+      "xFraction": 0.770535,
+      "yFraction": 0.5319
+    },
+    {
+      "code": "H18R",
+      "xFraction": 0.775383,
+      "yFraction": 0.508372
+    },
+    {
+      "code": "H19R",
+      "xFraction": 0.763262,
+      "yFraction": 0.486411
+    },
+    {
+      "code": "H20R",
+      "xFraction": 0.751747,
+      "yFraction": 0.464451
+    },
+    {
+      "code": "H21R",
+      "xFraction": 0.750535,
+      "yFraction": 0.44053
+    },
+    {
+      "code": "H22R",
+      "xFraction": 0.757807,
+      "yFraction": 0.417394
+    },
+    {
+      "code": "H23R",
+      "xFraction": 0.748413,
+      "yFraction": 0.395041
+    },
+    {
+      "code": "I5R",
+      "xFraction": 0.881749,
+      "yFraction": 0.801697
+    },
+    {
+      "code": "I6B",
+      "xFraction": 0.836885,
+      "yFraction": 0.782482
+    },
+    {
+      "code": "I6R",
+      "xFraction": 0.871749,
+      "yFraction": 0.776404
+    },
+    {
+      "code": "I7B",
+      "xFraction": 0.831733,
+      "yFraction": 0.766012
+    },
+    {
+      "code": "I7R",
+      "xFraction": 0.864476,
+      "yFraction": 0.755228
+    },
+    {
+      "code": "I8R",
+      "xFraction": 0.846294,
+      "yFraction": 0.737581
+    },
+    {
+      "code": "I9R",
+      "xFraction": 0.849627,
+      "yFraction": 0.709935
+    },
+    {
+      "code": "I10R",
+      "xFraction": 0.845839,
+      "yFraction": 0.684053
+    },
+    {
+      "code": "I11R",
+      "xFraction": 0.849627,
+      "yFraction": 0.660525
+    },
+    {
+      "code": "I12R",
+      "xFraction": 0.848718,
+      "yFraction": 0.640133
+    },
+    {
+      "code": "I13R",
+      "xFraction": 0.847203,
+      "yFraction": 0.617388
+    },
+    {
+      "code": "I14R",
+      "xFraction": 0.845991,
+      "yFraction": 0.59386
+    },
+    {
+      "code": "I15R",
+      "xFraction": 0.845082,
+      "yFraction": 0.571507
+    },
+    {
+      "code": "I16R",
+      "xFraction": 0.833263,
+      "yFraction": 0.549155
+    },
+    {
+      "code": "I17R",
+      "xFraction": 0.821748,
+      "yFraction": 0.528371
+    },
+    {
+      "code": "J9R",
+      "xFraction": 0.903568,
+      "yFraction": 0.704837
+    },
+    {
+      "code": "J10R",
+      "xFraction": 0.913871,
+      "yFraction": 0.680132
+    },
+    {
+      "code": "J11R",
+      "xFraction": 0.915083,
+      "yFraction": 0.656995
+    },
+    {
+      "code": "J12R",
+      "xFraction": 0.906901,
+      "yFraction": 0.634643
+    },
+    {
+      "code": "J13R",
+      "xFraction": 0.898416,
+      "yFraction": 0.613075
+    },
+    {
+      "code": "J14R",
+      "xFraction": 0.893264,
+      "yFraction": 0.595036
+    },
+    {
+      "code": "MP1A",
+      "xFraction": 0.766126,
+      "yFraction": 0.724444
+    },
+    {
+      "code": "MP1B",
+      "xFraction": 0.766126,
+      "yFraction": 0.724444
+    },
+    {
+      "code": "MP1C",
+      "xFraction": 0.745534,
+      "yFraction": 0.721111
+    },
+    {
+      "code": "MP2A",
+      "xFraction": 0.73658,
+      "yFraction": 0.697386
+    },
+    {
+      "code": "MP2B",
+      "xFraction": 0.723246,
+      "yFraction": 0.706798
+    },
+    {
+      "code": "MP3A",
+      "xFraction": 0.7087,
+      "yFraction": 0.66523
+    },
+    {
+      "code": "MP3B",
+      "xFraction": 0.703852,
+      "yFraction": 0.656211
+    },
+    {
+      "code": "MP3C",
+      "xFraction": 0.694473,
+      "yFraction": 0.647976
+    },
+    {
+      "code": "MP4",
+      "xFraction": 0.667606,
+      "yFraction": 0.6268
+    }
+  ]
+}

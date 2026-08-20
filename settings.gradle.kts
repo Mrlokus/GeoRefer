@@ -14,6 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Georefer"
+rootProject.name = "GeoLuker"
 include(":app")
-

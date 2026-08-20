@@ -1,113 +1,74 @@
-# Abrir, probar y generar Georefer en Android Studio
+# Compilar y distribuir GeoLuker desde Android Studio
 
-Este proyecto se entrega como código fuente. No se ha compilado ni generado ningún APK; tú realizarás esas acciones desde Android Studio siguiendo esta guía.
-
-## 1. Abrir el proyecto
+## 1. Abrir el proyecto correctamente
 
 1. Inicia Android Studio.
 2. Selecciona **Open**.
-3. Abre la carpeta raíz `C:\Users\Daniel\Desktop\GEOREFER` (no abras únicamente la carpeta `app`).
-4. Si Android Studio pregunta si confías en el proyecto, selecciona **Trust Project**.
-5. Espera a que termine **Gradle Sync**.
+3. Elige la carpeta raíz `GEOREFER`, donde están `settings.gradle.kts`, `gradlew.bat` y la carpeta `app`.
+4. Espera el mensaje de sincronización finalizada.
 
-La primera sincronización puede descargar dependencias y requiere conexión a Internet. Los mapas de trabajo seguirán siendo offline cuando se implemente el motor cartográfico.
+Si Android Studio indica que falta `gradle-wrapper.properties`, comprueba que abriste la raíz del proyecto y no `GEOREFER/app`.
 
-## 2. Revisar el JDK y el SDK
+## 2. Seleccionar Java y sincronizar
 
-1. Abre **File > Settings > Build, Execution, Deployment > Build Tools > Gradle**.
-2. En **Gradle JDK**, elige el JDK integrado de Android Studio, versión 21.
-3. Abre **Tools > SDK Manager**.
-4. Confirma que están instalados:
-   - Android SDK Platform 35.
-   - Android SDK Build-Tools 35.0.0 o posterior.
-   - Android SDK Platform-Tools.
-5. Pulsa **Sync Project with Gradle Files** si realizaste algún cambio.
+1. Ve a **File > Settings > Build, Execution, Deployment > Build Tools > Gradle**.
+2. En **Gradle JDK**, selecciona el JDK integrado de Android Studio (`jbr-21`) o un JDK compatible.
+3. Conserva **Distribution: Wrapper**.
+4. Pulsa **Sync Project with Gradle Files**.
 
-Si aparece el mensaje **SDK location not found**, abre el archivo `local.properties` de la raíz y verifica que contenga:
+El proyecto compila bytecode compatible con Java 17, aunque una versión reciente de Android Studio puede ejecutar Gradle con su JDK 21 integrado.
 
-```properties
-sdk.dir=C\:\\Users\\Daniel\\AppData\\Local\\Android\\Sdk
+## 3. Probar en el teléfono
+
+1. Activa las opciones de desarrollador y la depuración USB en el teléfono.
+2. Conéctalo y acepta la clave del computador.
+3. Selecciona el dispositivo en la barra superior.
+4. Elige la configuración `app` y pulsa **Run**.
+5. Concede ubicación precisa.
+6. Comprueba mosaicos al ampliar, límites de cámara, seguimiento GPS, rotación, búsqueda de lotes y búsqueda/orden de puntos.
+7. Activa modo avión, cierra y vuelve a abrir GeoLuker. El mapa y los puntos deben continuar disponibles.
+
+## 4. Verificaciones antes de distribuir
+
+En la terminal de Android Studio ejecuta:
+
+```powershell
+.\gradlew.bat testDebugUnitTest
+.\gradlew.bat lintDebug
+.\gradlew.bat compileDebugKotlin
 ```
 
-## 3. Preparar el POCO X8 Pro Max
+- `testDebugUnitTest` ejecuta las pruebas de georreferenciación, GPS, rumbo y navegación a puntos.
+- `lintDebug` busca problemas de Android, recursos, permisos y compatibilidad.
+- `compileDebugKotlin` confirma que todo el código Kotlin compila sin crear el APK final.
 
-1. En el teléfono, abre **Ajustes > Acerca del teléfono**.
-2. Pulsa repetidamente la versión de HyperOS hasta activar las opciones de desarrollador.
-3. Abre **Ajustes adicionales > Opciones de desarrollador**.
-4. Activa **Depuración USB**.
-5. Conecta el teléfono al computador y acepta su huella RSA cuando aparezca el aviso.
-6. En Android Studio, selecciona el POCO en la lista de dispositivos.
+## 5. Crear un APK firmado
 
-## 4. Ejecutar la aplicación
-
-1. Selecciona la configuración `app`.
-2. Pulsa **Run**.
-3. En Georefer, entra en **Mapa** y pulsa **Activar ubicación**.
-4. Concede **Ubicación precisa** y elige permitirla mientras usas la aplicación.
-5. Sal al exterior y espera el primer posicionamiento GNSS.
-
-El semáforo usa estas reglas:
-
-| Estado | Regla |
-|---|---|
-| Buscando | Sin lectura o lectura con más de 10 segundos |
-| Baja | Precisión mayor de 15 m |
-| Aceptable | Precisión mayor de 5 m y hasta 15 m |
-| Buena | Precisión de hasta 5 m |
-
-Se necesitan dos lecturas consecutivas para mejorar de estado. Una degradación se muestra inmediatamente.
-
-## 5. Pruebas manuales recomendadas
-
-1. Abre la app sin conceder permisos: no debe solicitar ubicación automáticamente.
-2. Concede solo ubicación aproximada: debe mostrar **Ubicación aproximada**.
-3. Concede ubicación precisa: debe iniciar el estado **Buscando señal**.
-4. Desactiva la ubicación del teléfono: debe mostrar **GPS desactivado**.
-5. Activa modo avión manteniendo el GPS encendido: la posición debe seguir funcionando.
-6. Lleva la aplicación al fondo: debe dejar de solicitar lecturas.
-7. Prueba a cielo abierto, bajo vegetación y junto a una construcción.
-8. Verifica que la aplicación muestre siempre la precisión real informada por Android.
-
-## 6. Probar mapas descargables
-
-1. Con conexión a Internet, abre **Descargas**.
-2. Selecciona **Departamento** y elige **Meta** o **Casanare**, o selecciona **Rectángulo**.
-3. Para un rectángulo, mueve y amplía el mapa hasta encerrar la zona dentro del marco dorado.
-4. Elige la vista Rural, Cartográfica, Minimalista o Alto contraste.
-5. Pulsa **Descargar** y espera el estado **Disponible sin conexión**.
-6. Pulsa **Usar** en el mapa descargado.
-7. Regresa a **Mapa** y confirma que no aparece una tarjeta para cambiarlo.
-8. Activa modo avión y vuelve a abrir el mapa para comprobar el almacenamiento offline.
-
-## 7. Ejecutar las pruebas unitarias
-
-Desde Android Studio:
-
-1. Abre `app/src/test/java/co/georefer/app/location/GpsQualityClassifierTest.kt`.
-2. Pulsa el icono de ejecución junto al nombre de la clase.
-3. Confirma que todas las pruebas estén en verde.
-
-También puedes usar la ventana **Gradle** y ejecutar `app > Tasks > verification > testDebugUnitTest`.
-
-## 8. Generar un APK de prueba
-
-1. Abre **Build > Build Bundle(s) / APK(s) > Build APK(s)**. Según la versión de Android Studio, el menú puede llamarse **Generate App Bundles or APKs > Generate APKs**.
-2. Espera el mensaje de compilación finalizada.
-3. Pulsa **Locate** para abrir la carpeta del archivo.
-
-La ruta habitual es:
-
-```text
-app\build\outputs\apk\debug\app-debug.apk
-```
-
-## 9. Generar un APK firmado para distribuir
-
-1. Abre **Build > Generate Signed App Bundle or APK**.
-2. Selecciona **APK**.
-3. Crea o selecciona un archivo de claves seguro.
-4. Guarda la contraseña fuera del proyecto y conserva una copia protegida de la clave.
+1. Actualiza `versionCode` y `versionName` en `app/build.gradle.kts`.
+2. Ve a **Build > Generate Signed App Bundle or APK**.
+3. Selecciona **APK**.
+4. Elige tu almacén de claves existente o crea uno y guárdalo de forma segura.
 5. Selecciona la variante `release`.
-6. Genera el APK y pruébalo en el POCO antes de distribuirlo.
+6. Activa las firmas V1 y V2 si Android Studio las ofrece.
+7. Finaliza el asistente.
 
-No pierdas la clave de firma: las futuras versiones deberán firmarse con la misma clave para instalarse como actualización.
+El resultado suele quedar en `app/build/outputs/apk/release/`. No publiques ni envíes el archivo de claves, sus contraseñas ni archivos `keystore.properties` al repositorio.
+
+## 6. Actualizar el mapa
+
+1. Sustituye `app/src/main/res/raw/luker_map.pdf` por el nuevo mapa oficial.
+2. Asegúrate de que sea un GeoPDF de una página con puntos de control geográficos.
+3. Regenera `app/src/main/assets/lots.json`:
+
+```powershell
+python tools/generate_lot_catalog.py app/src/main/res/raw/luker_map.pdf app/src/main/assets/lots.json
+```
+
+4. Repite las verificaciones del apartado 4.
+5. Incrementa la versión y crea un APK firmado nuevo.
+
+## 7. Instalar una actualización
+
+Una nueva compilación con el mismo identificador `co.geoluker.app` y la misma clave de firma puede instalarse sobre la versión anterior, conservando los puntos. Si cambia la clave o el identificador, Android la tratará como otra aplicación.
+
+La aplicación anterior `co.georefer.app` no se reemplaza automáticamente porque tiene otro identificador. Desinstálala manualmente cuando ya no se necesiten sus datos.
